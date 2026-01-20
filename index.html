@@ -3,34 +3,93 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Majdal — Discover</title>
-  <meta name="description" content="Discover Majdal. Shop the collection."/>
+  <title>Majdal — Coming Soon</title>
   <meta name="robots" content="index,follow"/>
-
-  <!-- Font for logo (closest easy match) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Majdal — We are currently working on our first ever drop."/>
   <link rel="stylesheet" href="assets/css/styles.css"/>
 </head>
 
-<body>
-
-  <header class="top">
-    <h1 class="logo">MAJDAL</h1>
-    <a class="btn" href="discover.html">DISCOVER MAJDAL</a>
+<body class="coming-body">
+  <header class="coming-header">
+    <!-- Replace this with an image logo later if you have one -->
+    <div class="coming-logo">MAJDAL</div>
   </header>
 
-  <main class="panels" aria-label="Shop navigation">
-    <section class="panel left">
-      <a href="collection.html">Shop Collection</a>
-    </section>
+  <main class="coming-main">
+    <div class="coming-card">
+      <p class="coming-message">
+        We are currently working on our first ever drop.
+        <br><br>
+        We want to say a special thank you for checking out our website.
+        <br>
+        — The Majdal Team
+      </p>
 
-    <section class="panel right">
-      <a href="collection.html">Shop Collection</a>
-    </section>
+<form
+  class="coming-form"
+  name="waitlist"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  id="waitlist-form"
+>
+  <input type="hidden" name="form-name" value="waitlist" />
+
+  <!-- spam protection -->
+  <p style="display:none;">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+
+  <label class="coming-label" for="email">
+    Get notified when our first drop goes live
+  </label>
+
+  <div class="coming-row">
+    <input
+      class="coming-input"
+      id="email"
+      name="email"
+      type="email"
+      placeholder="you@example.com"
+      required
+    />
+    <button class="coming-btn" type="submit">Notify Me</button>
+  </div>
+</form>
+
+<p class="coming-thanks" id="thank-you-message" aria-live="polite">
+  Thank you — you’re on the list.<br />
+  You’ll be notified as soon as our first drop goes live.
+</p>
+
+
+
+    </div>
   </main>
+  <script>
+  const form = document.getElementById("waitlist-form");
+  const thankYou = document.getElementById("thank-you-message");
+
+  if (form && thankYou) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // If email is missing or invalid
+      if (!form.checkValidity()) {
+        alert(
+          "Something went wrong.\n\nPlease make sure you’ve entered a valid email address and try again."
+        );
+        return;
+      }
+
+      // Success state
+      form.style.display = "none";
+      thankYou.style.display = "block";
+    });
+  }
+</script>
+
+
 
 </body>
 </html>

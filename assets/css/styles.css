@@ -247,4 +247,169 @@ a{ color:inherit; text-decoration:none; }
   .cards{ grid-template-columns: 1fr; }
   .trending-grid{ grid-template-columns: 1fr; }
 }
+/* ===== Coming Soon Front Page (Pastel Green + Gold Floral) ===== */
+
+.coming-body{
+  min-height: 100vh;
+  margin: 0;
+  background: #dfeee3; /* pastel classy green */
+  color: #5a4a1a;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+/* Mixed floral outline pattern */
+.coming-body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.20;
+  background-repeat: repeat;
+  background-size: 520px 520px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23b58a2a' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Daisy --%3E%3Cg transform='translate(80 90)'%3E%3Ccircle cx='0' cy='0' r='6'/%3E%3Cpath d='M0-26c8 3 8 17 0 20c-8-3-8-17 0-20Z'/%3E%3Cpath d='M0 26c8-3 8-17 0-20c-8 3-8 17 0 20Z'/%3E%3Cpath d='M-26 0c3-8 17-8 20 0c-3 8-17 8-20 0Z'/%3E%3Cpath d='M26 0c-3-8-17-8-20 0c3 8 17 8 20 0Z'/%3E%3Cpath d='M18-18c7 5 2 18-6 18c-6-7-1-20 6-18Z'/%3E%3Cpath d='M-18-18c-7 5-2 18 6 18c6-7 1-20-6-18Z'/%3E%3Cpath d='M18 18c7-5 2-18-6-18c-6 7-1 20 6 18Z'/%3E%3Cpath d='M-18 18c-7-5-2-18 6-18c6 7 1 20-6 18Z'/%3E%3C/g%3E%3C!-- Tulip --%3E%3Cg transform='translate(360 120)'%3E%3Cpath d='M0 10c-22-10-20-36-8-48c6 10 16 10 16 0c12 12 14 38-8 48Z'/%3E%3Cpath d='M0 10v52'/%3E%3Cpath d='M0 40c-12-10-22-10-30-6c8 10 18 16 30 12'/%3E%3Cpath d='M0 40c12-10 22-10 30-6c-8 10-18 16-30 12'/%3E%3C/g%3E%3C!-- Rose-ish spiral --%3E%3Cg transform='translate(130 360)'%3E%3Cpath d='M0 0c16-10 34 6 22 20c-8 10-24 8-30-2c-6-10 2-22 14-22c14 0 22 16 10 28c-12 12-32 10-40-4c-10-18 2-40 26-40c28 0 46 30 28 56'/%3E%3C/g%3E%3C!-- Small wildflower --%3E%3Cg transform='translate(410 360)'%3E%3Ccircle cx='0' cy='0' r='5'/%3E%3Cpath d='M0-22c10 6 10 14 0 18c-10-6-10-14 0-18Z'/%3E%3Cpath d='M0 22c10-6 10-14 0-18c-10 6-10 14 0 18Z'/%3E%3Cpath d='M-22 0c6-10 14-10 18 0c-6 10-14 10-18 0Z'/%3E%3Cpath d='M22 0c-6-10-14-10-18 0c6 10 14 10 18 0Z'/%3E%3Cpath d='M0 0v46'/%3E%3Cpath d='M0 26c-10-8-18-10-26-8c6 10 14 16 26 14'/%3E%3C/g%3E%3C!-- Leaves/branches for variety --%3E%3Cg opacity='0.9'%3E%3Cpath d='M260 250c-40 40-70 52-108 56'/%3E%3Cpath d='M260 250c40 40 70 52 108 56'/%3E%3Cpath d='M260 250c-8-26-20-44-44-62'/%3E%3Cpath d='M260 250c8-26 20-44 44-62'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+/* Full-edge "rug border" frame (gold outline) */
+.coming-body::after{
+  content:"";
+  position: fixed;
+  inset: 0;                 /* STARTS AT THE EDGE */
+  pointer-events: none;
+  z-index: 5;
+
+  /* Border thickness */
+  padding: 16px;
+
+  /* Two bands: ornate outer + thin inner line */
+  background:
+    /* Outer ornate band (repeat) */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23b58a2a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 120c18-30 42-44 70-44s52 14 70 44c-18 30-42 44-70 44s-52-14-70-44Z'/%3E%3Cpath d='M120 20c30 18 44 42 44 70s-14 52-44 70c-30-18-44-42-44-70s14-52 44-70Z'/%3E%3Ccircle cx='120' cy='120' r='10'/%3E%3Cpath d='M52 52l18 18M170 170l18 18M188 52l-18 18M70 170l-18 18'/%3E%3Cpath d='M30 30c14 0 24 10 24 24S44 78 30 78 6 68 6 54 16 30 30 30Z'/%3E%3Cpath d='M210 30c14 0 24 10 24 24s-10 24-24 24-24-10-24-24 10-24 24-24Z'/%3E%3Cpath d='M30 210c14 0 24-10 24-24s-10-24-24-24-24 10-24 24 10 24 24 24Z'/%3E%3Cpath d='M210 210c14 0 24-10 24-24s-10-24-24-24-24 10-24 24 10 24 24 24Z'/%3E%3C/g%3E%3C/svg%3E") 0 0/180px 180px repeat,
+    /* Slight gold wash to make it feel like a rug band */
+    linear-gradient(rgba(181,138,42,.12), rgba(181,138,42,.12));
+
+  /* Cut out the middle so only the border shows */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  /* Soft inner edge line */
+  box-shadow:
+    inset 0 0 0 1px rgba(181,138,42,.55),
+    inset 0 0 0 10px rgba(181,138,42,.10);
+}
+
+
+
+.coming-header{
+  position: relative;
+  padding: 22px 0 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.coming-logo{
+  font-family: "Times New Roman", serif;
+  font-size: 38px;
+  letter-spacing: .06em;
+  color: #b58a2a; /* gold */
+  text-shadow: 0 1px 0 rgba(255,255,255,.6);
+}
+
+.coming-main{
+  min-height: calc(100vh - 90px);
+  display: grid;
+  place-items: start center;
+  padding: 28px 16px 56px;
+}
+
+.coming-card{
+  width: min(820px, 92vw);
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(181,138,42,.30);
+  border-radius: 18px;
+  padding: 26px 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.coming-message{
+  margin: 0;
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #9a7622; /* deeper gold for text */
+}
+
+.coming-btn{
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #b58a2a;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: transform .12s ease, filter .12s ease;
+}
+.coming-btn:hover{ transform: translateY(-1px); filter: brightness(1.06); }
+.coming-btn:active{ transform: translateY(0); filter: brightness(.98); }
+
+.coming-small{
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: rgba(90,74,26,.65);
+}
+/* ===== Waitlist form styles ===== */
+.coming-form{
+  margin-top: 16px;
+}
+
+.coming-label{
+  display:block;
+  font-family: "Times New Roman", serif;
+  color:#9a7622;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.coming-row{
+  display:flex;
+  gap: 10px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap: wrap;
+}
+
+.coming-input{
+  width: min(420px, 90vw);
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(181,138,42,.35);
+  background: rgba(255,255,255,.75);
+  font-size: 14px;
+  outline: none;
+}
+
+.coming-input:focus{
+  border-color: rgba(181,138,42,.7);
+  box-shadow: 0 0 0 4px rgba(181,138,42,.18);
+}
+/* Hide thank-you message until submit */
+.coming-thanks {
+  display: none;
+  margin-top: 16px;
+  text-align: center;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #9a7622;
+}
+
 
