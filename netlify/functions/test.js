@@ -1,6 +1,13 @@
-exports.handler = async () => {
+export async function handler(event) {
   return {
     statusCode: 200,
-    body: "OK FROM NETLIFY FUNCTION ✅",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      ok: true,
+      message: "Netlify Functions are working ✅",
+      method: event.httpMethod,
+      path: event.path,
+      time: new Date().toISOString(),
+    }),
   };
-};
+}
