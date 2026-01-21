@@ -10,11 +10,8 @@
 </head>
 
 <body class="coming-body">
-<!-- Netlify form detection helper -->
-<form name="waitlist" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="hidden" name="form-name" value="waitlist" />
-  <input name="email" type="email" />
-</form>
+
+
 
   <header class="coming-header">
     <!-- Replace this with an image logo later if you have one -->
@@ -35,6 +32,7 @@
   class="coming-form"
   name="waitlist"
   method="POST"
+  action="/"
   data-netlify="true"
   netlify-honeypot="bot-field"
   id="waitlist-form"
@@ -76,16 +74,44 @@
   const form = document.getElementById("waitlist-form");
   const thankYou = document.getElementById("thank-you-message");
 
+  function encode(formEl) {
+    const formData = new FormData(formEl);
+    const params = new URLSearchParams();
+    for (const [k, v] of formData.entries()) params.append(k, v);
+    return params.toString();
+  }
+
   if (form && thankYou) {
-    form.addEventListener("submit", () => {
-      // Let Netlify submit normally, but show the thank-you message right away.
-      setTimeout(() => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Professional invalid email message
+      if (!form.checkValidity()) {
+        alert("Something went wrong.\n\nPlease enter a valid email address and try again.");
+        return;
+      }
+
+      try {
+        const res = await fetch(window.location.pathname, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode(form),
+        });
+
+        if (!res.ok) {
+          alert("Sorry — something went wrong. Please try again.");
+          return;
+        }
+
         form.style.display = "none";
         thankYou.style.display = "block";
-      }, 200);
+      } catch (err) {
+        alert("Sorry — something went wrong. Please check your connection and try again.");
+      }
     });
   }
 </script>
+
 
 
 
